@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        docker
+    }
     stages {
         stage('Building artifacts and what not') { 
             steps {
