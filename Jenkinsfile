@@ -27,7 +27,11 @@ pipeline {
                 sh 'docker run -dp 8888:8080 --name petclinic-started-by-jenkins petclinic-docker'
             }
         }
-        
+        stage('Pushing image to nexus repo') {
+            steps {
+                sh 'echo finished!'
+            }
+        }
         
     }
 }
