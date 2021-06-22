@@ -7,12 +7,12 @@ pipeline {
                 sh 'docker rm -f petclinic-started-by-jenkins'
             }
         }
-        // stage('Building artifacts and what not') { 
-        //     steps {
-        //         sh 'echo starting build'
-        //         sh './mvnw package'
-        //     }
-        // }
+        stage('Building artifacts and what not') { 
+            steps {
+                sh 'echo starting build'
+                sh './mvnw package'
+            }
+        }
         // stage('Initialize docker') {
         //     steps {
         //         def dockerHome = tool 'docker'
