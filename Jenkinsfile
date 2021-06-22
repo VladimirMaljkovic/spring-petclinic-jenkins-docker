@@ -7,6 +7,10 @@ pipeline {
                 sh './mvnw package'
             }
         }
+        stage('Initialize docker') {
+            def dockerHome = tool 'docker'
+            env.PATH = "${dockerHome}/bin:${env.PATH}"
+        }
         stage('Creating docker container') {
             steps {
                 sh 'echo creating docker image...'
