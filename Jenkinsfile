@@ -1,5 +1,6 @@
 pipeline {
-    agent slave
+    agent any
+    node('slave'){
     stages {
         stage('clearing up docker images') {
             steps {
@@ -33,5 +34,6 @@ pipeline {
             }
         }
         
+    }
     }
 }
