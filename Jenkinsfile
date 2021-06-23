@@ -1,6 +1,12 @@
 pipeline {
     agent any
     stages {
+        stage('Picking correct branch') {
+            steps {
+                sh 'echo checking out better branch'
+                sh 'git checkout docker-thing'
+            }
+        }
         stage('clearing up docker images') {
             steps {
                 sh 'docker ps'
