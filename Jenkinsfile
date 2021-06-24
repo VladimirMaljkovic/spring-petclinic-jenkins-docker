@@ -33,7 +33,7 @@ pipeline {
                 sh 'echo tagging image'
                 sh 'docker tag petclinic-docker 172.16.238.7:8081/petclinic-docker:v1'
                 sh 'echo logging into nexus...'
-                sh 'docker login -u admin -p@nokiaE71@ 172.16.238.7:8081'
+                sh 'docker login -u admin -p@nokiaE71@ 172.16.238.7:8083'
                 sh 'echo pusing image to nexus'
                 sh 'docker push 172.16.238.7:8083/petclinic-docker:v1'
             }
